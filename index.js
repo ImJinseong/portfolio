@@ -12,8 +12,8 @@ const startBtn = document.querySelector(".startBtn");
 const percentage = document.querySelector(".percentage");
 const outputSection = document.querySelector(".outputSection");
 
-const beer = document.querySelector(".beer");
 const soju = document.querySelector(".soju");
+const beer = document.querySelector(".beer");
 const coke = document.querySelector(".coke");
 const cider = document.querySelector(".cider");
 
@@ -157,10 +157,6 @@ startBtn.addEventListener("click", ()=>{
     z++;
   }
 
-
-  for(let i = 0; i < 4; i++){
-    bevarage[i] = 0;
-  }
   onOff = 1;
   restart = 1;
 
