@@ -33,8 +33,8 @@ let countFloor = 1;
 
 
 function createColor(countFloor, bevarage){
-  const colorArray = [[246, 189, 96], [236, 241, 244], [84, 11, 14], [240, 239, 235]];
-  cnt = countFloor -1;
+  const colorArray = [[236, 241, 244], [246, 189, 96], [84, 11, 14], [240, 239, 235]];
+  let cnt = countFloor -1;
 
   let color1 = [bevarage[0]*colorArray[0][0], bevarage[0]*colorArray[0][1], bevarage[0]*colorArray[0][2]];
   let color2 = [bevarage[1]*colorArray[1][0], bevarage[1]*colorArray[1][1], bevarage[1]*colorArray[1][2]];
@@ -157,6 +157,11 @@ startBtn.addEventListener("click", ()=>{
     z++;
   }
 
+  for(let i = 0; i < 4; i++){
+    bevarage[i] = 0;
+  }
+
+  console.log(bevarage);
   onOff = 1;
   restart = 1;
 
