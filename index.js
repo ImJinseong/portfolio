@@ -20,14 +20,17 @@ const cider = document.querySelector(".cider");
 const glass = document.querySelector(".glass");
 const glassSection = document.querySelector(".glassSection");
 
+const potionAll = document.querySelector(".potionAll");
+const output0 = document.querySelector(".outputSoju");
+const output1 = document.querySelector(".outputBeer");
+const output2 = document.querySelector(".outputCoke");
+const output3 = document.querySelector(".outputCider");
+
 const bevarage = [0, 0, 0, 0]; //소주 맥주 콜라 사이
 let countFloor = 1;
-/*
-맥주 rgb(246, 189, 96)
-소주 rgb(236, 241, 244)
-콜라 rgb(84, 11, 14)
-사이다 rgb(240, 239, 235)
- */
+
+
+
 
 function createColor(countFloor, bevarage){
   const colorArray = [[246, 189, 96], [236, 241, 244], [84, 11, 14], [240, 239, 235]];
@@ -111,8 +114,11 @@ startBtn.addEventListener("click", ()=>{
 
     let mixColor = createColor(countFloor, bevarage);
 
-    while(outputSection.hasChildNodes()){
-      outputSection.removeChild(outputSection.firstChild);
+    while(output0.hasChildNodes() || output1.hasChildNodes() || output2.hasChildNodes() || output3.hasChildNodes()){
+      if(output0.firstChild) output0.removeChild(output0.firstChild);
+      if(output1.firstChild)output1.removeChild(output1.firstChild);
+      if(output2.firstChild)output2.removeChild(output2.firstChild);
+      if(output3.firstChild)output3.removeChild(output3.firstChild);
       onOff = 0;
     }
   }
@@ -134,10 +140,21 @@ startBtn.addEventListener("click", ()=>{
     allSum += randNum;
     randSum = randSum- randNum;
 
+
     let span = document.createElement("span");
     let Text = document.createTextNode(`${randNum}`);
     span.appendChild(Text);
-    outputSection.appendChild(span);
+    console.log(bevarage);
+
+    let z = 0;
+    for(let j = z; j < 4; j++){
+      if(bevarage[j] == 1){
+        eval('output' + j).appendChild(span);
+        bevarage[j] = 0;
+        break;
+      }
+    }
+    z++;
   }
 
 
